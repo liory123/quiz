@@ -1,0 +1,16 @@
+1.
+a. if the search is inside other elemets the event will bubble up.
+b. ill hold the search in a varible for future use.
+c. val is not defind inside jquery event. ill use value instead. (or search.val();)
+
+var search = $('#search');
+search.keyup(function(e){
+	e.stopPropagation();
+	var topFiveSuggestions = fetchTopFiveSuggestions(e.target.value);
+	showAsAutoComplete(topFiveSuggestions);
+});
+
+2.
+function showMe ($element, flag) {
+$element.show({queue:'fire'}); flag? $element.dequeue("fire"): $element.hide();
+}
